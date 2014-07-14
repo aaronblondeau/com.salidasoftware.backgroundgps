@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+ 
+<plugin xmlns="http://www.phonegap.com/ns/plugins/1.0"
+           id="com.salidasoftware.backgroundgps"
+      version="0.1.0">
+    <name>Background GPS</name>
+    <description>Uses a background service to provide GPS locations.</description>
+    <license>MIT</license>
+    <keywords>phonegap,gps,background,service</keywords>
+
+    <engines>
+      <engine name="cordova" version=">=3.0.0" />
+   </engines>
+ 
+    <js-module src="www/backgroundgps.js" name="backgroundgps">
+        <clobbers target="backgroundgps" />
+    </js-module>
+ 
+    <!-- android -->
+    <platform name="android">
+        <config-file target="res/xml/config.xml" parent="/*">
+            <feature name="Backgroundgps">
+                <param name="android-package" value="com.salidasoftware.backgroundgps.Backgroundgps"/>
+            </feature>
+        </config-file>
+
+        <config-file target="res/values/strings.xml" parent="/*">
+            <string name="backgroundgps_service_name">Background GPS Service</string>
+        </config-file>
+
+        <config-file target="AndroidManifest.xml" parent="/manifest">
+          <uses-permission android:name="android.permission.ACCESS_LOCATION_EXTRA_COMMANDS" />
+          <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>
+          <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
+        </config-file>
+
+        <config-file target="AndroidManifest.xml" parent="/manifest/application">
+          <service android:name="com.salidasoftware.backgroundgps.BackgroundgpsService"
+                android:permission="android.permission.ACCESS_FINE_LOCATION"
+                android:label="@string/backgroundgps_service_name" 
+                android:exported="true"
+                android:enabled="true">
+          </service>
+        </config-file>
+ 
+        <source-file src="src/android/com/salidasoftware/backgroundgps/Backgroundgps.java" target-dir="src/com/salidasoftware/backgroundgps" />
+        <source-file src="src/android/com/salidasoftware/backgroundgps/BackgroundgpsService.java" target-dir="src/com/salidasoftware/backgroundgps" />
+        <source-file src="src/android/com/salidasoftware/backgroundgps/LocationEvent.java" target-dir="src/com/salidasoftware/backgroundgps" />
+        <source-file src="libs/eventbus-2.2.1.jar" target-dir="libs" />
+     </platform>          
+</plugin>
