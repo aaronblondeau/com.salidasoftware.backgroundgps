@@ -1,6 +1,6 @@
 # Backgroundgps
 
-This is a PhoneGap/Cordova plugin that provides GPS locations via a background service.  The plugin is largely meant to serve as a template for authoring more PhoneGap plugins but is functional.  The plugin currently only works on Android.
+This is a PhoneGap/Cordova plugin that provides GPS locations via a background service.  The plugin is meant to serve as a template for authoring more PhoneGap plugins, but is functional.  The plugin currently only works on Android.
 
 ## To install from a local directory
 
