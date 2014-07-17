@@ -6,13 +6,25 @@ This is a PhoneGap/Cordova plugin that provides GPS locations via a background s
 
 `phonegap local plugin add <PATH TO>/com.salidasoftware.backgroundgps/`
 
+or
+
+`cordova plugin add <PATH TO>/com.salidasoftware.backgroundgps/`
+
 ## To install from github
 
 `phonegap local plugin add https://github.com/aaronblondeau/com.salidasoftware.backgroundgps.git`
 
+or
+
+`cordova plugin add https://github.com/aaronblondeau/com.salidasoftware.backgroundgps.git`
+
 ## To uninstall
 
 `phonegap local plugin remove com.salidasoftware.backgroundgps`
+
+or
+
+`cordova plugin remove com.salidasoftware.backgroundgps`
 
 ## To use
 
